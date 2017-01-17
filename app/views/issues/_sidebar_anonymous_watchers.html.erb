@@ -1,0 +1,6 @@
+<% if @issue && !User.current.allowed_to?(:add_issue_watchers, @project) &&
+  (@issue.anonymous_watchers.present? && !@issue.watchers.present? && User.current.allowed_to?(:view_issue_watchers, @project)) %>
+  <div id="watchers">
+    <%= render :partial => 'watchers/watchers', :locals => {:watched => @issue} %>
+  </div>
+<% end %>

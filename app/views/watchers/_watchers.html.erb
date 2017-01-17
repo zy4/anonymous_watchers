@@ -1,0 +1,7 @@
+<% html = Nokogiri::HTML.fragment(render(:parent, {:watched => watched})) %>
+<% html.at_css("h3").replace(capture do %>
+  <h3><%= l(:label_issue_watchers) %> (<%= watched.watchers.size+watched.anonymous_watchers.size %>)</h3>
+<% end) %>
+<%= raw html %>
+
+

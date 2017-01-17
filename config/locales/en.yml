@@ -1,0 +1,8 @@
+en:
+  label_optional_watcher_mails: "Anonymous watchers' emails (separated by comma):"
+  text_enter_watcher_email: "Enter email to subscribe:"
+  label_ignore_emails: "Ignore emails"
+  text_ignore_emails: "Specify comma-separated list of emails that should not be added as anonymous watchers when creating issue from mail"
+  text_cannot_add_watcher: "Can't create a subscription, please check email address:"
+  text_already_subscribed: "Can't create a subscription for this email because it's already in watchers list. To unsubscribe, ask the project manager or administrator."
+  permission_subscribe_anonymously: "Subscribe anonymously"

@@ -1,0 +1,5 @@
+<% if (Redmine::VERSION::ARRAY <=> [2, 1, 0]) > 0 %>
+  $('#watchers').html("<%= escape_javascript render(:partial => 'watchers/watchers', :locals => {:watched => @watched}) %>");
+<% else %>
+  $('watchers').update("<%= escape_javascript render(:partial => 'watchers/watchers', :locals => {:watched => @watched}) %>");
+<% end %>

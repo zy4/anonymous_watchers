@@ -1,0 +1,9 @@
+<% if prompt %>
+  <% url = url_for({:controller => 'watchers',
+                    :action => 'anonymous_watch',
+                    :object_type => @watched.class.to_s.underscore,
+                    :object_id => @watched.id}) %>
+  anonymousWatch("<%= raw j text %>", "<%= raw j params[:mail] %>", "<%= raw j url %>");
+<% else %>
+  alert("<%= raw j text %>");
+<% end %>

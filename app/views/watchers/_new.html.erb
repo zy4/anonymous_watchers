@@ -1,0 +1,5 @@
+<% html = Nokogiri::HTML.fragment(render(:parent, {:watched => watched})) %>
+<% html.at_css("p.buttons").before(capture do %>
+  <p><%= label_tag 'watcher[mails]', l(:label_optional_watcher_mails) %><br><%= text_field_tag 'watcher[mails]', nil, :style => "width:100%;" %></p>
+<% end) %>
+<%= raw html %>

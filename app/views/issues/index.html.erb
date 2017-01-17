@@ -1,0 +1,7 @@
+<% if @project %>
+  <% html = Nokogiri::HTML.fragment(render(:parent)) %>
+  <% html.at_css("div:root.contextual") << watcher_tag(@project.issues_subscription, User.current) %>
+  <%= raw html %>
+<% else %>
+  <%= render(:parent) %>
+<% end %>

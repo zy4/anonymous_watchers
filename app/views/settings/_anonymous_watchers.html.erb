@@ -1,0 +1,5 @@
+<p>
+  <label><%= l(:label_ignore_emails) %></label>
+  <%= text_field_tag 'settings[ignore_emails]', @settings[:ignore_emails], :size => 80 %>
+  <em class="info"><%= l(:text_ignore_emails) %></em>
+</p>

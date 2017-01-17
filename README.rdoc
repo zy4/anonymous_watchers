@@ -1,0 +1,49 @@
+= Anonymous Watchers plug-in
+
+Anonymous Watchers plug-in:
+* Allows to add any emails as watchers in Redmine.
+  Open an issue, click 'Add watchers' and you will see additional email field.
+
+* Allows to subscribe to/unsubscribe from Redmine events anonymously as regular users do.
+  Just click Watch/Unwatch on desired item as anonymous user and then enter your email.
+
+* Adds more events to subscribe.
+  You can now subscribe anonymously or as regular user to: all issues, all documents, all files, all news.
+
+* When creating issues from mails, it adds non-member emails to watchers automatically (exceptions can be configured).
+
+Recommended to use together with "Anonymous Authors plug-in":
+http://redmine.academ.org/projects/redmine/wiki/Anonymous_Authors_plug-in
+
+== Installation And Configuration
+
+From a ZIP file:
+
+* Download the latest version of the plugin
+* Unzip to */plugins* (Redmine 2.x) or */vendor/plugins* (Redmine 1.x) folder of Redmine
+
+From a GIT repository:
+
+* Clone repository with <b>git clone git://git.academ.org/redmine_anonymous_watchers.git plugins/redmine_anonymous_watchers</b> command
+
+After download:
+
+* Run <b>bundle install</b>
+* Run <b>rake redmine:plugins:migrate</b> (Redmine 2.x) or <b>rake db:migrate:plugins</b> (Redmine 1.x).
+* Restart Redmine.
+* In <b>Administration -> Settings -> Email notifications</b> select events you want be able to subscribe.
+* Enable <b>Subscribe anonymously</b> permission for Anonymous role, if you want to let anonymous users to subscribe.
+* Configure emails exceptions list in plugin settings, if you use issues creation from mails.
+
+== Compatibility
+
+This plug-in is compatible with Redmine 1.4.x, 2.0.x, 2.1.x
+
+== Changelog
+
+[0.1.0] * Added ability to subscribe to/unsubscribe from Redmine events anonymously.
+        * Added more events to subscribe (all issues, all documents, all files, all news)
+        * View rewrites fully eliminated
+
+        After upgrade, don't forget to run 'bundle install' and migrate installed plugins
+[0.0.1] Initial commit
