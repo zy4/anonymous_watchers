@@ -33,6 +33,9 @@ to_prepare = Proc.new do
   unless FilesController.include?(RedmineAnonymousWatchers::FilesControllerPatch)
     FilesController.send(:include, RedmineAnonymousWatchers::FilesControllerPatch)
   end
+  unless Journal.include?(RedmineAnonymousWatchers::JournalPatch)
+    Journal.send :include, RedmineAnonymousWatchers::JournalPatch
+  end
 end
 
 if Redmine::VERSION::MAJOR >= 2
