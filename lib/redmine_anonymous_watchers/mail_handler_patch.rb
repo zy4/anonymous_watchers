@@ -18,6 +18,7 @@ module RedmineAnonymousWatchers
           addresses -= Setting.plugin_redmine_anonymous_watchers[:ignore_emails].downcase.split(/[\s,]+/)
           addresses -= [redmine_emission_address.downcase]
           addresses -= obj.watcher_users.map(&:mail)
+          addresses -= [obj.author.mail] if obj.author.mail
           obj.watcher_mails = addresses
         end
       end
