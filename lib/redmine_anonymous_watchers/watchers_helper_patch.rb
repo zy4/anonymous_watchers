@@ -41,7 +41,7 @@ module RedmineAnonymousWatchers
             s << ' '
             if Redmine::VERSION::MAJOR >= 2
               s << link_to(image_tag('delete.png'), url,
-                           :remote => true, :method => 'post', :style => "vertical-align: middle", :class => "delete")
+                           :remote => true, :method => 'delete', :style => "vertical-align: middle", :class => "delete")
             else
               s << link_to_remote(image_tag('delete.png'), {:url => url}, :href => url_for(url),
                            :style => "vertical-align: middle", :class => "delete")
