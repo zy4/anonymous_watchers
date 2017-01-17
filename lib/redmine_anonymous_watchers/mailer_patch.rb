@@ -27,7 +27,7 @@ module RedmineAnonymousWatchers
       end
       
       def issue_edit_with_anonymous_watchers(journal, to_users, cc_users)
-        @subscription_recipients = journal.journalized.watcher_recipients
+        @subscription_recipients = journal.watcher_recipients
         ## fixed: issue.project.issues_recipients -> journal.journalized.watcher_recipients
         issue_edit_without_anonymous_watchers(journal, to_users, cc_users)
       end
