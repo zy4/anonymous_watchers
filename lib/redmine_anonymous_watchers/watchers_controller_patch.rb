@@ -43,7 +43,7 @@ module RedmineAnonymousWatchers
 
       def destroy_with_anonymous
         if params[:mail]
-          @watched.set_watcher(params[:mail], false) if request.post?
+          @watched.set_watcher(params[:mail], false) if request.delete?
           respond_to do |format|
             format.html { redirect_to :back }
             format.js
