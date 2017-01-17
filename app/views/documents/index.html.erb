@@ -1,6 +1,6 @@
 <% if Setting.notified_events.include?('document_added') && @project %>
   <% html = Nokogiri::HTML.fragment(render(:parent)) %>
-  <% html.at_css("div:root.contextual") << watcher_tag(@project.documents_subscription, User.current) %>
+  <% html.at_css("div:root.contextual") << watcher_link(@project.documents_subscription, User.current) %>
   <%= raw html %>
 <% else %>
   <%= render(:parent) %>
